@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { margin: 0; width:100%%; height:100%%; }
+    html { width:100%%; height:100%%; }
+  </style>
+</head>
+<body>
+  <div id="player"></div>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
+    var player;
+    YT.ready(function() {
+      var params = %@;
+      player = new YT.Player('player', params);
+      // window.location.href = 'ytplayer://onYouTubeIframeAPIReady';
+    });
+    
+
+    function onReady(event) {
+      // window.location.href = 'ytplayer://onReady?data=' + event.data;
+      // event.target.playVideo();
+    }
+    function onStateChange(event) {
+      // window.location.href = 'ytplayer://onStateChange?data=' + event.data;
+    }
+
+    function onPlaybackQualityChange(event) {
+      // window.location.href = 'ytplayer://onPlaybackQualityChange?data=' + event.data;
+    }
+    function onPlayerError(event) {
+      // window.location.href = 'ytplayer://onError?data=' + event.data;
+    }
+  </script>
+</body>
+</html>
